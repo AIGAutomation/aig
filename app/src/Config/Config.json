@@ -1,0 +1,15 @@
+{
+    
+    "database":{
+
+
+
+    },
+    "app":{
+
+        "name":"aig",
+        "url":"http://localhost/skeleton/public"
+
+    }
+
+}
