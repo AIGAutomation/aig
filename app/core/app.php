@@ -27,7 +27,7 @@ require_once '../app/core/container.php';
 /******************/
 //
 $app->get('/', \App\Controllers\AigController::class.':index');
-$app->get('/inventario', \App\Controllers\AigController::class.':inventario');
+$app->get('/catalogo', \App\Controllers\AigController::class.':catalogo');
 
 /******************/
 /****EJECUTAMOS****/

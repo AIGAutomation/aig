@@ -13,6 +13,7 @@ class AigController extends Controller{
         $this->container=$container;
         $this->config=$this->container['config'];
         $this->views=$this->container['views'];
+        $this->databases['aig']=$this->container['database-pool'](['aig'=>$this->config->database('aig')]);
 
     }
 
@@ -22,9 +23,9 @@ class AigController extends Controller{
         
     }
 
-    public function inventario($request,$response,$args){
+    public function catalogo($request,$response,$args){
 
-        return $this->views->render($response, 'inventario.html', []);
+        return $this->views->render($response, 'catalogo.html', []);
         
     }
 

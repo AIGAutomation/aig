@@ -23,6 +23,16 @@ $container['views']=function($container){
     return new Slim\Views\PhpRenderer('../app/src/Views');
 
 };
+//
+$container['database-pool']=function($container){
+
+    return function($config){
+
+        return App\Tools\DatabasePool::instanciate($config);
+
+    };
+
+};
 
 
 ?>
