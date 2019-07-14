@@ -33,6 +33,34 @@ $container['database-pool']=function($container){
     };
 
 };
+//
+$container['marca']=function($container){
 
+    return function($database){
 
+        return new App\Modules\Marca($database);
+
+    };
+
+};
+//
+$container['sector']=function($container){
+
+    return function($database){
+
+        return new App\Modules\Sector($database);
+
+    };
+
+};
+//
+$container['medida']=function($container){
+
+    return function($database){
+
+        return new App\Modules\Medida($database);
+
+    };
+
+};
 ?>

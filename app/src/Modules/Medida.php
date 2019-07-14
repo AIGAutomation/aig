@@ -5,17 +5,17 @@ namespace App\Modules;
 use App\Primitives\Connection as Connection;
 use App\Interfaces\TableInterface as TableInterface;
 //
-class Marca extends Connection implements TableInterface{
+class Medida extends Connection implements TableInterface{
     
     public function index(){
 
-        return $this->database->select('Marca',['id','nombre']);
+        return $this->database->select('Medida',['id','variable']);
 
     }
 
     public function get($id){
 
-       return $this->database->get('Marca',['id','nombre']);
+       return $this->database->get('Medida',['id','variable']);
 
     }
 
