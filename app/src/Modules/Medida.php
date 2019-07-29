@@ -2,20 +2,15 @@
 //
 namespace App\Modules;
 //
-use App\Primitives\Connection as Connection;
-use App\Interfaces\TableInterface as TableInterface;
+use App\Primitives\MongoConnection as Connection;
 //
-class Medida extends Connection implements TableInterface{
+class Medida extends Connection{
     
     public function index(){
 
-        return $this->database->select('Medida',['id','variable']);
-
-    }
-
-    public function get($id){
-
-       return $this->database->get('Medida',['id','variable']);
+        $index = $this->mongo->query('aig.medida',[],['projection' => ['_id' => 1,'medida'=>1],'sort'=>['_id'=>1]]);
+        
+        return $index;
 
     }
 

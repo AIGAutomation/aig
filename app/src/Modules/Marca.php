@@ -2,20 +2,15 @@
 //
 namespace App\Modules;
 //
-use App\Primitives\Connection as Connection;
-use App\Interfaces\TableInterface as TableInterface;
+use App\Primitives\MongoConnection as Connection;
 //
-class Marca extends Connection implements TableInterface{
+class Marca extends Connection{
     
     public function index(){
 
-        return $this->database->select('Marca',['id','nombre']);
-
-    }
-
-    public function get($id){
-
-       return $this->database->get('Marca',['id','nombre']);
+        $index = $this->mongo->query('aig.marca',[],['projection' => ['_id' => 1,'marca'=>1],'sort'=>['_id'=>1]]);
+        
+        return $index;
 
     }
 

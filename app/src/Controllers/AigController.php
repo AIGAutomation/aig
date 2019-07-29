@@ -13,7 +13,6 @@ class AigController extends Controller{
         $this->container=$container;
         $this->config=$this->container['config'];
         $this->views=$this->container['views'];
-        $this->databases['aig']=$this->container['database-pool'](['aig'=>$this->config->database('aig')]);
 
     }
 

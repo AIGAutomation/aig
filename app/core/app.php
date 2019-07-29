@@ -21,7 +21,6 @@ $app = new \Slim\App([
 /******CONTAINER******/
 /*********************/
 require_once '../app/core/container.php';
-
 /******************/
 /****ROUTER********/
 /******************/
@@ -31,8 +30,7 @@ $app->get('/catalogo', \App\Controllers\AigController::class.':catalogo');
 $app->get('/api/marca', \App\Controllers\ApiController::class.':marca');
 $app->get('/api/sector', \App\Controllers\ApiController::class.':sector');
 $app->get('/api/medida', \App\Controllers\ApiController::class.':medida');
-
-
+$app->get('/api/producto/{marca}/{medida}/{sector}', \App\Controllers\ApiController::class.':producto');
 //
 /******************/
 /****EJECUTAMOS****/

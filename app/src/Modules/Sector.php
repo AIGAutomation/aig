@@ -2,20 +2,15 @@
 //
 namespace App\Modules;
 //
-use App\Primitives\Connection as Connection;
-use App\Interfaces\TableInterface as TableInterface;
+use App\Primitives\MongoConnection as Connection;
 //
-class Sector extends Connection implements TableInterface{
+class Sector extends Connection{
     
     public function index(){
 
-        return $this->database->select('Sector',['id','sector']);
+        $index = $this->mongo->query('aig.sector',[],['projection' => ['_id' => 1,'sector'=>1],'sort'=>['_id'=>1]]);
 
-    }
-
-    public function get($id){
-
-       return $this->database->get('Sector',['id','sector']);
+        return $index;
 
     }
 

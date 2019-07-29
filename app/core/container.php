@@ -24,11 +24,11 @@ $container['views']=function($container){
 
 };
 //
-$container['database-pool']=function($container){
+$container['mongo-db']=function($container){
 
     return function($config){
 
-        return App\Tools\DatabasePool::instanciate($config);
+        return App\Tools\Mongo::instanciate($config);
 
     };
 
@@ -63,4 +63,15 @@ $container['medida']=function($container){
     };
 
 };
+//
+$container['producto']=function($container){
+
+    return function($database){
+
+        return new App\Modules\Producto($database);
+
+    };
+
+};
+
 ?>

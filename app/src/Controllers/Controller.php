@@ -12,7 +12,7 @@ abstract class Controller{
     //app config and order by json
     protected $config;
     //mysql databases
-    protected $databases=[];
+    protected $mongos;
     //node js socket.io by elephant.io
     protected $views;
 
