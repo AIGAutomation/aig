@@ -91,7 +91,7 @@
           </ul>
           <br>
           <p class="card-text" style="height: 225px;">{{item.descripcion}}</p>
-          <button type="button" class="btn btn-danger btn-block btn-lg"><span class="fa fa-file-pdf"></span>datasheet</button>
+          <a v-bind:href="item.pdf" type="button" class="btn btn-danger btn-block btn-lg"><span class="fa fa-file-pdf"></span>datasheet</a>
         </div>
       </div>
     </div>

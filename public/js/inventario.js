@@ -89,7 +89,9 @@ var app = new Vue({
             titulo:element.titulo,
             descripcion:element.descripcion,
             img:'http://localhost/aig/public/img/producto/'+element.codigo+'.jpg',
-            sector:element.sector
+            sector:element.sector,
+            medida:element.medida,
+            pdf:'http://localhost/aig/public/pdf/'+element.codigo+'.pdf'
           };
           producto.push(item);
 
