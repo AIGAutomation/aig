@@ -14,20 +14,20 @@ var app = new Vue({
   },
   methods: {
     marcaRequest(){
-      axios.get('http://localhost/aig/public/api/marca')
+      axios.get('http://67.205.155.166/aig/public/api/marca')
       .then(response=>{
         this.marca=response.data;
       });
 
     },
     sectorRequest(){
-      axios.get('http://localhost/aig/public/api/sector')
+      axios.get('http://67.205.155.166/aig/public/api/sector')
       .then(response=>{
         this.sector=response.data;
       });
     },
     medidaRequest(){
-      axios.get('http://localhost/aig/public/api/medida')
+      axios.get('http://67.205.155.166/aig/public/api/medida')
       .then(response=>{
         this.medida=response.data;
       });
@@ -78,7 +78,7 @@ var app = new Vue({
       
     },
     productoRequest(marcas,medidas,sectores){
-      axios.get(`http://localhost/aig/public/api/producto/${marcas}/${medidas}/${sectores}`)
+      axios.get(`http://67.205.155.166/aig/public/api/producto/${marcas}/${medidas}/${sectores}`)
       .then(response=>{
         let producto=[];
 
@@ -88,10 +88,10 @@ var app = new Vue({
             codigo:element.codigo,
             titulo:element.titulo,
             descripcion:element.descripcion,
-            img:'http://localhost/aig/public/img/producto/'+element.codigo+'.jpg',
+            img:'http://67.205.155.166/aig/public/img/producto/'+element.codigo+'.jpg',
             sector:element.sector,
             medida:element.medida,
-            pdf:'http://localhost/aig/public/pdf/'+element.codigo+'.pdf'
+            pdf:'http://67.205.155.166/aig/public/pdf/'+element.codigo+'.pdf'
           };
           producto.push(item);
 
