@@ -28,6 +28,13 @@ class AigController extends Controller{
         
     }
 
+
+    public function test($request,$response,$args){
+
+        phpinfo();
+        
+    }
+
 }
 
 ?>
