@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Heroic Features - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-feautures.css" rel="stylesheet">
+  <link href="css/catalogo.css" rel="stylesheet">
+
+  <!-- Vue resources -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.1/vuex.js"></script>
+
+
+</head>
+
+<body style="background: linear-gradient(to right, #6190e8, #a7bfe8);">
+
+  <!-- Page Content -->
+  <div class="container" id="app">
+
+    <div class="row">
+      <div class="col">
+        <div class="card  mb-4">
+          <div class="card-body">
+
+            <h4 class="card-title mb-4">Filtros</h4>
+
+            <h6 class="card-subtitle mb-2">Marca:</h6>
+
+            <div class="row mb-4">
+              <div class="form-check form-check-inline col-sm-2" v-for="(item,index) in marca" v-bind:key="index">
+                <input class="form-check-input" type="checkbox" v-bind:id="item.marca" v-on:change="productSearch">
+                <label class="form-check-label" for="inlineCheckbox1">{{item.marca}}</label>
+              </div>
+            </div>
+
+            <h6 class="card-subtitle mb-2">Medida:</h6>
+
+            <div class="row mb-4">
+              <div class="form-check form-check-inline col-sm-2" v-for="(item,index) in medida" v-bind:key="index">
+                <input class="form-check-input" type="checkbox" v-bind:id="item.medida" v-on:change="productSearch">
+                <label class="form-check-label" for="inlineCheckbox1">{{item.medida}}</label>
+              </div>
+            </div>
+
+            <h6 class="card-subtitle">Sector:</h6>
+
+            <div class="row mb-4">
+              <div class="form-check form-check-inline col-sm-2" v-for="(item,index) in sector" v-bind:key="index">
+                <input class="form-check-input" type="checkbox" v-bind:id="item.sector" v-on:change="productSearch">
+                <label class="form-check-label" for="inlineCheckbox1">{{item.sector}}</label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Features -->
+    <div class="row text-center" >
+
+      <div class="col-lg-3 col-md-6 mb-4" v-for="(item,index) in producto" v-bind:key="index">
+        <div class="card h-100">
+          <img class="card-img-top" v-bind:src="item.img">
+          <div class="card-body">
+            <h4 class="card-title">{{item.codigo}}</h4>
+            <h6 class="card-subtitle text-muted">{{item.codigo}}</h6>
+            <p class="card-text">{{item.descripcion}}</p>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-info btn-block mt-4" v-bind:href="item.pdf"><i class="fas fa fa-file-pdf"></i>DataSheet</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- row -->
+
+  </div>
+  <!-- /.container -->
+  <script src="js/inventario.js"></script>
+
+</body>
+
+</html>

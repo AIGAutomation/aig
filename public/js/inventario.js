@@ -4,7 +4,7 @@ var app = new Vue({
     marca:null,
     sector:null,
     medida:null,
-    producto:null
+    producto:null,
   },
   mounted() {
     this.marcaRequest();
