@@ -14,7 +14,6 @@ class Producto extends Connection{
         $medidas=explode("-",$medida);
         $sectores=explode("-",$sector);
 
-
         //0
         if($marcas===["*"]&&$medidas===["*"]&&$sectores===["*"]){
 

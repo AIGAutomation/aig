@@ -18,7 +18,6 @@ var app = new Vue({
       .then(response=>{
         this.marca=response.data;
       });
-
     },
     sectorRequest(){
       axios.get('http://67.205.155.166/api/sector')
